@@ -16,7 +16,8 @@ module.exports = {
                 "gradient":"hsl(198, 60%, 50%)"
             },
             white: "hsl(0, 0%, 100%)",
-            cyan:"hsl(176, 68%, 64%)"
+            cyan:"hsl(176, 68%, 64%)",
+            lightRed:"hsl(0, 100%, 63%)"
         },
         fontFamily: {
             "open-sans": ["Open Sans", "sans-serif"],

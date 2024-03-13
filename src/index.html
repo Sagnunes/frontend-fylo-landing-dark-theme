@@ -9,6 +9,7 @@
     <link href="./output.css" rel="stylesheet">
     <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 </head>
 <body class="bg-blue-intro-background">
@@ -17,9 +18,9 @@
         <img src="../images/logo.svg" alt="logo" class="w-20 h-6">
         <nav>
             <ul class="flex flex-row space-x-6 text-xs text-white font-raleway">
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Sign In</a></li>
+                <li><a href="#" class="duration-300 ease-in-out hover:underline">Features</a></li>
+                <li><a href="#" class="duration-300 ease-in-out hover:underline">Team</a></li>
+                <li><a href="#" class="duration-300 ease-in-out hover:underline">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -162,18 +163,19 @@
             </div>
         </article>
 
-        <article class="mt-[160px] w-[336px] bg-blue-intro-background rounded-lg drop-shadow-2xl  px-[28px] py-[40px] mb-[-192px] md:mb-[-125px] relative md:w-[863px]">
+        <article class="mt-[160px] w-[336px] bg-blue-intro-background rounded-lg drop-shadow-2xl  px-[28px] py-[40px] mb-[-192px] md:mb-[-125px] relative md:w-[863px]" x-data="form">
             <h2>Get early access today</h2>
 
             <p class="mt-[16px]">It only takes a minute to sign up and our free starter tier is extremely generous. If
                 you have any
                 questions, our support team would be happy to help you.</p>
-            <form action="" class="flex flex-col mt-8 md:flex-row md:items-center md:space-x-7">
+            <form class="flex flex-col mt-8 md:flex-row md:items-center md:space-x-7" @submit.prevent="submitForm">
                 <label for="email" class="w-full">
-                    <input type="email" id="email" placeholder="email@example.pt" class="w-full">
+                    <input type="email" id="email" placeholder="email@example.pt" class="w-full" x-model="email">
                 </label>
                 <button class="mt-6 text-[12px] w-full md:mt-0 md:w-1/2">Get Started For Free</button>
             </form>
+            <span class="text-lightRed text-[10px] font-open-sans font-bold ml-6" x-show="error">Error, please check your email</span>
         </article>
 
     </section>
@@ -225,13 +227,13 @@
             </ul>
 
             <div class="flex justify-center items-center space-x-[9px] mt-[56px] md:mt-0 md:items-start">
-                <div class="w-7 h-7 flex items-center justify-center border border-white rounded-full text-white">
+                <div class="w-7 h-7 flex items-center justify-center border border-white rounded-full text-white hover:text-cyan hover:border-cyan cursor-pointer">
                     <i class="fa-brands fa-facebook-f"></i>
                 </div>
-                <div class="w-7 h-7 flex items-center justify-center border border-white rounded-full text-white">
+                <div class="w-7 h-7 flex items-center justify-center border border-white rounded-full text-white hover:text-cyan hover:border-cyan cursor-pointer">
                     <i class="fa-brands fa-twitter"></i>
                 </div>
-                <div class="w-7 h-7 flex items-center justify-center border border-white rounded-full text-white">
+                <div class="w-7 h-7 flex items-center justify-center border border-white rounded-full text-white hover:text-cyan hover:border-cyan cursor-pointer">
                     <i class="fa-brands fa-instagram"></i>
                 </div>
             </div>
@@ -248,4 +250,22 @@
 </main>
 
 </body>
+<script>
+    document.addEventListener("alpine:init", () => {
+        Alpine.data("form", () => ({
+            error: false,
+            email: "",
+            submitForm() {
+                this.error = !this.validateEmail(this.email);
+            },
+            validateEmail(email) {
+                return String(email)
+                    .toLowerCase()
+                    .match(
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    );
+            },
+        }));
+    });
+</script>
 </html>

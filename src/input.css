@@ -17,7 +17,7 @@ p{
 }
 
 button{
-    @apply bg-gradient-to-r from-cyan to-blue-gradient py-4 px-[81px] font-raleway font-bold text-sm text-white rounded-3xl
+    @apply bg-gradient-to-r from-cyan to-blue-gradient py-4 px-[81px] font-raleway font-bold text-sm text-white rounded-3xl hover:to-cyan
 }
 
 input{
@@ -49,7 +49,7 @@ address{
 }
 
 ul li{
-    @apply font-open-sans font-normal text-base text-white
+    @apply font-open-sans font-normal text-base text-white hover:font-bold cursor-pointer
 }
 
 .attribution {
