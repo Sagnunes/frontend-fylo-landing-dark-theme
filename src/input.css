@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 h1{
-    @apply font-raleway font-bold text-2xl leading-[36px] text-white text-center
+    @apply font-raleway font-bold text-2xl leading-[36px] text-white text-center md:text-[40px] md:leading-[60px]
 }
 
 h2{
-    @apply font-raleway font-bold text-lg leading-[24px] text-white text-center
+    @apply font-raleway font-bold text-lg leading-[24px] text-white text-center md:text-[20px] md:leading-[30px]
 }
 
 p{
@@ -37,11 +37,11 @@ article a{
 }
 
 .testimonials h3{
-    @apply font-open-sans text-[10px] font-bold leading-[12px] tracking-[0.5px] text-white
+    @apply font-open-sans text-[10px] font-bold leading-[12px] tracking-[0.5px] text-white md:text-[20px]
 }
 
 .testimonials h4{
-    @apply font-open-sans text-[7px] font-normal leading-[10px] text-white
+    @apply font-open-sans text-[7px] font-normal leading-[10px] text-white md:text-[14px] md:leading-[21px]
 }
 
 address{
