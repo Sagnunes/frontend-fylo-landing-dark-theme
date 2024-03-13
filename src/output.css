@@ -646,6 +646,10 @@ video {
   margin-bottom: 15rem;
 }
 
+.mt-\[-46px\]{
+  margin-top: -46px;
+}
+
 .flex{
   display: flex;
 }
@@ -1094,6 +1098,10 @@ ul li{
 
   .md\:mb-60{
     margin-bottom: 15rem;
+  }
+
+  .md\:mb-\[-125px\]{
+    margin-bottom: -125px;
   }
 
   .md\:flex{
