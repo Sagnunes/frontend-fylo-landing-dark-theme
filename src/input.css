@@ -1,3 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1{
+    @apply font-raleway font-bold text-2xl leading-[36px] text-white text-center
+}
+
+h2{
+    @apply font-raleway font-bold text-lg leading-[24px] text-white text-center
+}
+
+p{
+    @apply font-open-sans font-normal text-sm leading-[21px] text-white text-center
+}
+
+button{
+    @apply bg-gradient-to-r from-cyan to-blue-gradient py-4 px-[81px] font-raleway font-bold text-sm text-white rounded-3xl
+}
+
+input{
+    @apply h-[48px] py-4 px-[81px] rounded-3xl placeholder:font-open-sans placeholder:text-[10px] placeholder:text-[#c0c0c0]
+}
+
+article a{
+    @apply font-open-sans text-xs text-cyan
+}
+
+.testimonials{
+    @apply bg-blue-testimonials-background p-6 rounded
+}
+
+.testimonials blockquote {
+    @apply font-open-sans text-[10px] font-normal leading-[18px] text-white
+}
+
+.testimonials h3{
+    @apply font-open-sans text-[10px] font-bold leading-[12px] tracking-[0.5px] text-white
+}
+
+.testimonials h4{
+    @apply font-open-sans text-[7px] font-normal leading-[10px] text-white
+}
+
+address{
+    @apply font-open-sans font-normal text-base leading-6 text-white
+}
+
+ul li{
+    @apply font-open-sans font-normal text-base text-white
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    @apply text-cyan
+}
