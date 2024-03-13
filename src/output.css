@@ -642,6 +642,10 @@ video {
   margin-top: 56px;
 }
 
+.mb-60{
+  margin-bottom: 15rem;
+}
+
 .flex{
   display: flex;
 }
@@ -1076,8 +1080,20 @@ ul li{
     top: -15px;
   }
 
+  .md\:top-\[-261px\]{
+    top: -261px;
+  }
+
+  .md\:top-\[-428px\]{
+    top: -428px;
+  }
+
   .md\:mt-0{
     margin-top: 0px;
+  }
+
+  .md\:mb-60{
+    margin-bottom: 15rem;
   }
 
   .md\:flex{
@@ -1223,5 +1239,15 @@ ul li{
 
   .md\:leading-normal{
     line-height: 1.5;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:top-\[-428px\]{
+    top: -428px;
+  }
+
+  .lg\:top-\[-315px\]{
+    top: -315px;
   }
 }
